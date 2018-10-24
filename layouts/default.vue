@@ -5,6 +5,13 @@
         <div class="speech-bubble">The first word is banana</div>
       </div>
     </div>
+    <template v-if="correct">
+      <div class="bird-container bird-container-two">
+        <div class="bird bird--two speaking">
+          <div class="speech-bubble">You win</div>
+        </div>
+      </div>
+    </template>
     <h1 class="pa4 ma0" v-tooltip.bottom-start="'The third word is murder'">Dumb-puzz</h1>
     <header>
       <nav class="flex w-75 justify-around f4 code pa1">
@@ -34,7 +41,8 @@ import solution from '~/components/solution'
 export default {
   computed: mapState([
     "darkMode",
-    "birdSpeaking"
+    "birdSpeaking",
+    "correct"
   ]),
   methods: {
     ...mapActions([

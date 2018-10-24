@@ -66,6 +66,13 @@ a:visited, a {
   animation-iteration-count: infinite;
 	animation-name: fly-right-one;
 	animation-timing-function: linear;
+
+	
+}
+
+.bird-container-two {
+	animation-delay: -2s;
+  animation-duration: 15s;
 }
 
 @keyframes fly-cycle {

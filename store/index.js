@@ -78,10 +78,7 @@ export const actions = {
   checkAnswer({commit}, answer) {
     console.log(answer)
     if (answer && answer.toLowerCase() === 'banana frog murder') {
-
-      alert('You win')
-      // commit('setCorrect')
-      // Do better later
+      commit('setCorrect')
     } else {
       commit('setFailed')
 
