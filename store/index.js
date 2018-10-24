@@ -2,12 +2,31 @@ import axios from "~/plugins/axios"
 
 export const state = () => ({
   items: [
-  ]
+  ],
+  darkMode: false,
+  correct: false,
+  birdSpeaking: false,
+  failed: false
 }) 
 
 export const mutations = {
   setItems(state, items) {
     state.items = items
+  },
+  toggleMode(state) {
+    state.darkMode = !state.darkMode
+  },
+  toggleBird(state) {
+    state.birdSpeaking = !state.birdSpeaking
+  },
+  setCorrect(state) {
+    state.correct = true
+  },
+  setFailed(state) {
+    state.failed = true
+  },
+  unsetFailed(state) {
+    state.failed = false
   }
 }
 
@@ -27,5 +46,26 @@ export const actions = {
     )
 
     commit("setItems", realItems)
+  },
+
+  toggleMode({ commit }) {
+    commit("toggleMode")
+  },
+
+  checkAnswer({commit}, answer) {
+    console.log(answer)
+    if (answer === 'banana frog murder') {
+      commit('setCorrect')
+    } else {
+      commit('setFailed')
+
+      setTimeout(() => {
+        commit('unsetFailed')
+      }, 3000);
+    }
+  },
+
+  toggleBird({commit}) {
+    commit("toggleBird")
   }
 }

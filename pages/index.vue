@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="floaty-clue code">The answer is 3 words.</div>
     <Items />
   </div>
 </template>

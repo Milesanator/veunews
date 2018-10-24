@@ -7,3 +7,121 @@
 .page-leave-active {
   transition: opacity .25s;
 }
+
+.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+a:visited, a {
+  color: inherit;
+}
+
+.floaty-clue {
+  color: white;
+  left: 50%;
+  position: fixed;
+  pointer-events: none;
+  top: 50%;
+  z-index: -1;
+}
+
+.floaty-clue.inverse {
+  color: #121212;
+}
+
+.container {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+/* Bird stuff */
+.bird {
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg);
+  background-size: auto 100%;
+  cursor: pointer;
+  height: 125px;
+  position: relative;
+  will-change: background-position;
+	width: 88px;
+  z-index: 2;
+	
+  animation-delay: -0.5s;
+  animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-name: fly-cycle;
+	animation-timing-function: steps(10);
+}
+
+.bird-container {
+	left: -10%;
+	position: absolute;
+	top: 20%;
+	transform: scale(0) translateX(-10vw);
+	will-change: transform;
+
+  animation-delay: 0;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+	animation-name: fly-right-one;
+	animation-timing-function: linear;
+}
+
+@keyframes fly-cycle {
+	100% {
+		background-position: -900px 0;
+	}
+}
+
+@keyframes fly-right-one {
+	
+	0% {
+		transform: scale(0.3) translateX(-10vw);
+	}
+	
+	10% {
+		transform: translateY(2vh) translateX(10vw) scale(0.4);
+	}
+	
+	20% {
+		transform: translateY(0vh) translateX(30vw) scale(0.5);
+	}
+	
+	30% {
+		transform: translateY(4vh) translateX(50vw) scale(0.6);
+	}
+	
+	40% {
+		transform: translateY(2vh) translateX(70vw) scale(0.6);
+	}
+	
+	50% {
+		transform: translateY(0vh) translateX(90vw) scale(0.6);
+	}
+	
+	60% {
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+	
+	100% {
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+
+.speech-bubble {
+  border: 1px black solid;
+  border-radius: 3px;
+  display: none;
+  font-size: 33px;
+  padding: 4px;
+  position: absolute;
+  right: -88px;
+  text-align: center;
+  top: 125px;
+  z-index: 2;
+}
+
+.bird.speaking .speech-bubble {
+  display: block;
+}

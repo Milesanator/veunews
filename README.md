@@ -25,3 +25,30 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 Have an input with "The answer is: []"
 Hide clues spliced into different sections
+
+5 Clues
+
+1. use dark mode
+ - hidden white text
+2. hidden user page, spliced in thirdwordisman
+  - clue can be seen only on light mode
+3. 1 post on home has an extra comment spliced
+  - comment is a clue by thirdwordisman
+
+
+  Answer: banana frog murder
+
+  "The answer is 3 words."
+  "The first word is banana"
+  "The second word is frog"
+  "The third word is murder"
+  "There is a secret comment hidden in Home."
+
+dark mode clues:
+  - home
+  - new
+
+light mode clues:
+  - show
+
+
