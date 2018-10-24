@@ -38,11 +38,11 @@ Hide clues spliced into different sections
 
   Answer: banana frog murder
 
-  "The answer is 3 words."
-  "The first word is banana"
-  "The second word is frog"
+  XX"The answer is 3 words."
+  XX"The first word is banana"
+  "The second word is something all jobs jave in common"
   "The third word is murder"
-  "There is a secret comment hidden in Home."
+  XX"There is a secret comment hidden in Home."
 
 dark mode clues:
   - home

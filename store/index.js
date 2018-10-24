@@ -38,12 +38,35 @@ export const actions = {
     const itemPromises = tenIds.map(id => axios.get(`item/${id}.json`))
     const itemResp = await Promise.all(itemPromises)
     const items = itemResp.map((res => res.data))
-    const realItems = items.map(
+    let realItems = items.map(
       item => item ? item : {
         id: -1,
         title: "Failed to load"
       }
     )
+
+    if (payload === "jobstories.json") {
+      realItems = realItems.map(
+        item => {
+          const title = item.title
+
+          item.title = title + ' frog'
+
+          return item
+        }
+      )
+    }
+
+    if (payload === 'topstories.json') {
+      const random = Math.floor(Math.random() * Math.floor(10))
+
+      realItems = realItems.map((item, index) => {
+        if (index === random) {
+          item.by = 'milesanator'
+        }
+        return item
+      })
+    }
 
     commit("setItems", realItems)
   },
@@ -54,8 +77,11 @@ export const actions = {
 
   checkAnswer({commit}, answer) {
     console.log(answer)
-    if (answer === 'banana frog murder') {
-      commit('setCorrect')
+    if (answer && answer.toLowerCase() === 'banana frog murder') {
+
+      alert('You win')
+      // commit('setCorrect')
+      // Do better later
     } else {
       commit('setFailed')
 

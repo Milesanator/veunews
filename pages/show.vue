@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="floaty-clue inverse code">There is a clue hidden in the comments of Home.</div>
+    <div class="floaty-clue inverse code">There is commenter in Home who doesn't belong.</div>
     <Items />
   </div>
 </template>
