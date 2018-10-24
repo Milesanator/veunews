@@ -5,7 +5,7 @@
         <div class="speech-bubble">The first word is banana</div>
       </div>
     </div>
-    <h1 class="pa4 ma0">Dumb-puzz</h1>
+    <h1 class="pa4 ma0" v-tooltip.bottom-start="'The third word is murder'">Dumb-puzz</h1>
     <header>
       <nav class="flex w-75 justify-around f4 code pa1">
         <nuxt-link class="link underline-hover" to="/" exact>Home</nuxt-link>
