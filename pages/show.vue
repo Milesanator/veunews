@@ -10,7 +10,7 @@ export default {
     Items
   },
   async fetch({ store }) {
-    await store.dispatch("LOAD_ITEMS", "topstories.json")
+    await store.dispatch("LOAD_ITEMS", "showstories.json")
   }
 }
 </script>

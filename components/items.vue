@@ -1,14 +1,23 @@
 <template>
   <div>
-    <div class="f1 code">
-      Hello World
-    </div>
     <ul class="list pa2">
       <li class="item" v-for="item in items" :key="item.id">
-        <div class="score">{{item.score}}</div>
-        <div class="title">{{item.title}}</div>
-        <div class="details">by {{item.by}} {{item.time | timeSince}}</div>
-        <div class="comments">{{item.descendants}} comments</div>
+        <div class="score f4">{{item.score}}</div>
+        <div class="title">
+          {{item.title}}
+          <template v-if="item.url">
+            <a class="f7" :href="item.url">{{item.url | hostname}}</a>
+          </template>
+        </div>
+        <div class="details">
+          <nuxt-link :to="'/users/' + item.by">{{item.by}}</nuxt-link>
+          <p class="ma0 i f7">{{item.time | timeSince}}</p>
+        </div>
+        <template v-if="item.descendants">
+          <div class="comments">
+            <nuxt-link :to="'/item/' + item.id">{{item.descendants}} comments</nuxt-link>
+          </div>
+        </template>
         </li>
     </ul>
   </div>
