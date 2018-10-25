@@ -62,7 +62,7 @@ export const actions = {
 
       realItems = realItems.map((item, index) => {
         if (index === random) {
-          item.by = 'milesanator'
+          item.by = 'doesntbelong'
         }
         return item
       })

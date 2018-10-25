@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="user.id === 'milesanator'">
+    <template v-if="user.id === 'doesntbelong'">
       <div class="pa4 code">
         The second word is something all the jobs have in common
       </div>
@@ -24,7 +24,7 @@ export default {
     }
   },
   async asyncData({ route }) {
-    if (route.params.id === 'milesanator') {
+    if (route.params.id === 'doesntbelong') {
       return {
         user: {
           id: route.params.id
